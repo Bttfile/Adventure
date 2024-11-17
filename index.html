@@ -11,31 +11,171 @@
 </head>
 <body>
     <main>
+         <!-- primeira pergunta -->
         <div class="passo ativo" id="passo-0">
             <img src="img/matematica.jpg" alt="">
             <p>27+19</p>
             <button class="btn-proximo" data-proximo="1">46</button>
-            <button class="btn-proximo" data-proximo="2">38</button>
+            <button class="btn-proximo" data-proximo="2">48</button>
         </div>
+        <!--  segunda pergunta -->
         <div class="passo" id="passo-1">
-            <p>x17</p>
-            <button class="btn-proximo" data-proximo="3">826</button>
-            <button class="btn-proximo" data-proximo="4">782</button>
+            <p>x 2</p>
+            <button class="btn-proximo" data-proximo="3">82</button>
+            <button class="btn-proximo" data-proximo="4">92</button>
         </div>
+        <!-- primeiro erro -->
         <div class="passo" id="passo-2">
-            <img src="img/errado.png" alt="encontrando uma cidade maravilhosa perdida no Amazonas">
-            <p>Errado.</p>
+            <img src="img/10810352.png">
+            
         </div>
+        <!--  segundo erro -->
         <div class="passo" id="passo-3">
-            <img src="img/errado.png" alt="encontrando uma cidade maravilhosa perdida no Amazonas">
-            <p>Errado.</p>
+            <img src="img/10810352.png" >
+            
         </div>
-
+        <!--  terceira pergunta -->
         <div class="passo" id="passo-4">
-            <img src="img/certo.png" alt="imagem voltando para casa e desitindo da aventura">
-            <p>Você acertou.</p>
+            <p>/ 4</p>
+            <button class="btn-proximo" data-proximo="5">23</button>
+            <button class="btn-proximo" data-proximo="6">33</button>
         </div>
+         <!--  terceiro erro -->
+         <div class="passo" id="passo-6">
+            <img src="img/10810352.png">
+            
+        </div>
+       <!--  quarta pergunta -->
+       <div class="passo" id="passo-5">
+        <p>-13</p>
+        <button class="btn-proximo" data-proximo="7">10</button>
+        <button class="btn-proximo" data-proximo="8">12</button>
+    </div>
+     <!--  quarto erro -->
+     <div class="passo" id="passo-8">
+        <img src="img/10810352.png">
+        
+    </div>
+    <!--  quinta pergunta -->
+    <div class="passo" id="passo-7">
+        <p>+999</p>
+        <button class="btn-proximo" data-proximo="9">1019</button>
+        <button class="btn-proximo" data-proximo="10">1009</button>
+    </div>
+    <!--  quinto erro -->
+    <div class="passo" id="passo-9">
+        <img src="img/10810352.png" > 
+        
+    </div>
+    <div class="passo" id="passo-10">
+        <img src="img/9135401.png" >
+        
+    </div>
     </main>
     <script src="script.js"></script>
 </body>
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <script>
+        // Função que fecha a janela
+        function fecharPagina() {
+            window.close();  // Fecha a aba ou a janela do navegador
+        }
+
+        // Função para iniciar o temporizador
+        function iniciarTemporizador() {
+            // Defina o tempo do temporizador em milissegundos (ex: 10000ms = 10 segundos)
+            setTimeout(fecharPagina, 10000);  // Fecha a página após 10 segundos
+        }
+        
+        // Chama a função ao carregar a página
+        window.onload = iniciarTemporizador;
+    </script>
+</head>
+<body>
+</body>
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        /* Estilos gerais da página */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #8c00ff;
+            text-align: center;
+            height: 100vh;
+        }
+
+        /* Estilo do relógio (contador) */
+        #timer {
+            font-size: 2em;
+            color: #b700ff;
+            background-color: #ffcc00;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: fixed;  /* Posiciona o relógio de forma fixa */
+            top: 10px;        /* Distância do topo */
+            left: 10px;       /* Distância da esquerda */
+            z-index: 1000;    /* Garante que o relógio fique acima de outros elementos */
+        }
+    </style>
+    <script>
+        // Função que irá atualizar o relógio
+        function iniciarTemporizador() {
+            let tempoRestante = 20; // Defina o tempo (em segundos) para o temporizador (10 segundos neste exemplo)
+
+            // Função que será chamada a cada segundo
+            const timerInterval = setInterval(function() {
+                // Atualiza o conteúdo do contador no HTML
+                document.getElementById("timer").textContent = `Tempo restante: ${tempoRestante} segundos`;
+
+                // Quando o tempo acabar, para o temporizador e fecha a página
+                if (tempoRestante <= 0) {
+                    clearInterval(timerInterval);  // Para o setInterval
+                    fecharPagina();  // Fecha a página
+                }
+
+                tempoRestante--;  // Decrementa o tempo
+            }, 1000);  // Intervalo de 1 segundo (1000ms)
+        }
+
+        // Função para fechar a página
+        function fecharPagina() {
+            alert("O tempo acabou! A página será fechada.");
+            window.close(); // Tenta fechar a janela
+        }
+
+        // Chama a função quando a página for carregada
+        window.onload = iniciarTemporizador;
+    </script>
+</head>
+<body>
+    <!-- Relógio de contagem regressiva -->
+    <div id="timer">Tempo restante: 20 segundos</div>
+</body>
+
+<div class="caixa">
+    <a href="index.html">Reiniciar</a>
+</div>
+
+
+
+
+
+
+
+
+
 </html>
